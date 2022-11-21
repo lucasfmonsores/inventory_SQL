@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
+    "dev": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,13 @@
   },
   "homepage": "https://github.com/lucasfmonsores/inventory_SQL#readme",
   "dependencies": {
-    "express": "^4.18.2"
-  }
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "sqlite": "^4.1.2",
+    "sqlite3": "^5.1.2"
+  },
+"type":"module"
 }
+
+
+
