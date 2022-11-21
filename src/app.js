@@ -1,7 +1,7 @@
 //import {openDb} from './configDB.js';
 
 
-import createTable from './controler/person.js';
+import createTable, { insertPerson } from './controler/person.js';
 import express from 'express';
 const app = express();
 app.use(express.json())
@@ -13,7 +13,7 @@ app.get('/', function(req, res){
 })
 
 app.post('/person', function(req, res){
-    console.log(req.body);
+    insertPerson(req.body); 
     res.json({
         "statucCode": 200
     })
