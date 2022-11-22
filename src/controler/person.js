@@ -11,3 +11,9 @@ export async function insertPerson(person){
         db.run('INSERT INTO Person (name, age) VALUES (?,?)', [person.name, person.age]);
     });
 }
+
+export async function updatePerson(person){
+    openDb().then(db=>{
+        db.run('UPDATE Person SET name=?, age=? WHERE id=?', [person.name, person.age, person.id]);
+    });
+}
