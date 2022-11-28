@@ -16,4 +16,18 @@ export async function updatePerson(person){
     openDb().then(db=>{
         db.run('UPDATE Person SET name=?, age=? WHERE id=?', [person.name, person.age, person.id]);
     });
+
 }
+export async function selectPersons(){
+   return openDb().then(db=>{
+       return db.all('SELECT * FROM Person')
+       .then(res=>res)
+    });
+}
+export async function selectPerson(id){
+   return openDb().then(db=>{
+       return db.get('SELECT * FROM Person WHERE id=?', [id])
+       .then(res=>res)
+    });
+}
+
