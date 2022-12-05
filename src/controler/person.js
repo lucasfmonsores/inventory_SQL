@@ -2,13 +2,13 @@ import { openDb } from "../configDB.js";
 
 export default async  function createTable(){
     openDb().then(db=>{
-        db.exec('CREATE TABLE IF NOT EXISTS Person ( id INTEGER PRIMARY KEY, name TEXT, age INTEGER) ')
+        db.exec('CREATE TABLE IF NOT EXISTS Person ( id INTEGER PRIMARY KEY, name TEXT, age INTEGER, city TEXT) ')
     })
 }
 
 export async function insertPerson(person){
     openDb().then(db=>{
-        db.run('INSERT INTO Person (name, age) VALUES (?,?)', [person.name, person.age]);
+        db.run('INSERT INTO Person (name, age, city) VALUES (?,?,?)', [person.name, person.age, person.city]);
     });
 }
 
@@ -31,3 +31,9 @@ export async function selectPerson(id){
     });
 }
 
+export async function deletePersons(){
+    return openDb().then(db=>{
+        return db.all('DELETE FROM Person WHERE id=?', [id])
+        .then(res=>res)
+     });
+ }

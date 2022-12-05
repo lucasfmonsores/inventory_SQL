@@ -21,6 +21,10 @@ app.get('/persons',async function(req, res){
 app.get('/person',async function(req, res){
     let person = await selectPerson(req.body.id);
     res.json(person);
+    console.log(`consulta encontrada no ID: ${person.id}` )
+    console.log("-------------------")
+    
+    console.log(`Nome: ${person.name}` )
 })
 
 app.post('/person', function(req, res){
@@ -44,8 +48,12 @@ app.put('/person', function(req, res){
 }
 });
 
+app.delete('/person',async function(req, res){
+    let person = await deletePerson(req.body.id);
+    res.json(person);
+})
 
 
 
-app.listen(3000, ()=>console.log("api running"))
+app.listen(3000, ()=>console.log("api running on local host 3000"))
 
