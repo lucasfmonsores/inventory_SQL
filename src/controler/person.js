@@ -31,9 +31,9 @@ export async function selectPerson(id){
     });
 }
 
-export async function deletePersons(){
+export async function deletePerson(id){
     return openDb().then(db=>{
-        return db.all('DELETE FROM Person WHERE id=?', [id])
+        return db.get('DELETE FROM Person WHERE id=?', [id])
         .then(res=>res)
      });
  }
