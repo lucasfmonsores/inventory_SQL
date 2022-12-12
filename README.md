@@ -15,6 +15,17 @@
     
     
 </ul>
+<h2>Install Instructions</h2>
+<div>
+
+<ol>
+<li>DELETE folder node_modules </li>
+<li>NPM Install Express</li>
+<li>NPM Install SQLITE and SQLITE3 "Use --save later command or google it before Install to understand a little more"</li>
+
+</ol>
+
+</div>
 
 
 <div>
