@@ -4,8 +4,7 @@
 <p>The idea for this project is practice : </p>
 
 <ul>
-
-    <li>CRUD</li>
+    <li>CRUD</li> 
     <li>Javascript</li>
     <li>Node</li>
     <li>Express</li>
