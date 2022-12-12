@@ -2,9 +2,9 @@
   "name": "inventory_sql",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "/app.js",
   "scripts": {
-    "dev": "nodemon src/app.js",
+    "dev": "nodemon /app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

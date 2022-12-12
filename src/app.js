@@ -2,15 +2,23 @@
 
 
 
-import createTable, { insertPerson, updatePerson, selectPerson, selectPersons, deletePerson } from './controler/person.js';
+import createTable, { insertPerson, updatePerson, selectPerson, selectPersons, deletePerson } from './controler/person.js'; 
 import express from 'express';
 const app = express();
-app.use(express.json())
+import path from 'path'; 
+app.use(express.json());
+app.use(express.static('public'));
+
+const __dirname = path.resolve();
 
 createTable(); 
 
+
+
+console.log(__dirname)
 app.get('/', function(req, res){
-    res.send("ola")  
+
+    res.sendFile(path.join(__dirname, "./views/home.html")) 
 
 });
 
@@ -21,7 +29,7 @@ app.get('/person',async function(req, res){
 app.get('/persons',async function(req, res){
     let person = await selectPerson(req.body.id);
     res.json(person);
-    console.log(`consulta encontrada no ID: ${person.id}` )
+    console.log(`consulta encontrada no ID: ${person.id}` ) 
     console.log("-------------------")
     
     console.log(`Nome: ${person.name}` )
