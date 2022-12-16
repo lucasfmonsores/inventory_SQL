@@ -18,7 +18,8 @@ createTable();
 console.log(__dirname)
 app.get('/', function(req, res){
 
-    res.sendFile(path.join(__dirname, "./views/home.html")) 
+    res.sendFile(path.join(__dirname, "./views/home.html"))
+
 
 });
 
@@ -34,7 +35,7 @@ app.get('/persons',async function(req, res){
     
     console.log(`Nome: ${person.name}` )
 })
-
+  
 app.post('/person', function(req, res){
     insertPerson(req.body); 
     res.json({

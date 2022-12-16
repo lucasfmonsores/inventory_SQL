@@ -1,4 +1,11 @@
 
 h1 {
     color: blue;
+
+}
+
+li {
+    font-style: italic ;
+    color: brown;
+    font-size: 32px;
 }
